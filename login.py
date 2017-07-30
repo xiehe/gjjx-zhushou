@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import os
+import sys
+import webbrowser
 import random
 import re
 from PIL import Image
@@ -17,7 +20,7 @@ class Login:
         self.captcha_path = 'temp/captcha.png'
 
     # 获取验证码
-    def getCaptcha(self):
+    def get_captcha(self):
         """
         @return Bool, 文件流
         """
@@ -29,6 +32,22 @@ class Login:
             return True, r.content
         else:
             return False, r.content
+
+    # 显示验证码
+    def show_image(self, file_path):
+        """
+        :param file_path: 图片文件路径
+        """
+        if sys.version_info >= (3, 3):
+            from shlex import quote
+        else:
+            from pipes import quote
+
+        if sys.platform == "darwin":
+            command = "open -a /Applications/Preview.app %s&" % quote(file_path)
+            os.system(command)
+        else:
+            webbrowser.open(os.path.join(os.getcwd(), file_path))
 
     # 登录
     def login(self, payload):
