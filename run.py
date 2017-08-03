@@ -36,7 +36,8 @@ def apdate(appointment, datepoint):
             appointment.appointment(postdata, selected['name'])
             return True, (d, i)
         else:
-            return False, None
+            continue
+    return False, None
 
 if __name__ == '__main__':
     session = Session().session
