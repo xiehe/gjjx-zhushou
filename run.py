@@ -9,9 +9,9 @@ from parseconf import ParseConf
 import webbrowser
 import sys
 reload(sys)
-sys.setdefaultencoding('gbk')
+sys.setdefaultencoding('utf8')
 
-DATELINE_CN = ['上午', '中午', '晚上']
+DATELINE_CN = {'0':'上午', '1':'中午', '2':'晚上'}
 CONFIG = ParseConf()
 
 
@@ -19,7 +19,7 @@ def apdate(appointment, datepoint):
     """
     预约日期
     :param appointment: 预约session
-    :param datepoint 需要预约的时间点 [(2017-05-27, 0)]
+    :param datepoint 需要预约的时间点 [('2017-05-27', '0')]
     """
     (postdata, schedule) = appointment.timetable()
     print u'获取预约日期表...'
