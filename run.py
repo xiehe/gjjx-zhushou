@@ -29,7 +29,7 @@ def apdate(appointment, datepoint):
         if schedule.has_key(d) == False:
             return False, None
         
-        selected = schedule[d][i]
+        selected = schedule[d][int(i)]
         if selected['state'] == 'lijiyuyue':
             # 可预约提示
             print d + DATELINE_CN[i] + u' 可以预约'
