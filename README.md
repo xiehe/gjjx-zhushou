@@ -1,3 +1,4 @@
+# 已暂停维护
 # 公交驾校预约助手
 
 最新windows版下载地址：[点击下载](https://github.com/xiehe/gjjx-zhushou/releases/download/v0.1/assistant_v0.1_20170803_win.zip) [2017-08-03]
